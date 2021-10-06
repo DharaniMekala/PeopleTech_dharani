@@ -150,11 +150,7 @@ public class LinkedListAdd
 		list.LastIndexOf(list);
 		System.out.println("\nData Contains: "); 
 		System.out.println(list.contains(list, new Student(21, "dharani", "ece")));
-		// Student s = new Student();
-		// s.setRoll(52); 
-		// System.out.print("\n======================================\n");
-		// list.remove(list, s); 
-		// list.print(list); 
+		 
 		}
 
 }
