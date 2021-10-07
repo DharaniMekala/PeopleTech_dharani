@@ -106,7 +106,7 @@ public class LinkedListAdd
 				temp = temp.next;
 				index++;
 				}
-			System.out.println("The last index is : " + index + "of student "+temp);
+			System.out.println("The last index of list is : " + index + " of student "+temp);
 			}
 		}
 	//Contains
@@ -146,7 +146,7 @@ public class LinkedListAdd
 		list.getFirst(list);
 		System.out.println("get last"); 
 		list.getLast(list); 
-		System.out.println("get last index");
+		System.out.println("Last index of list is ");
 		list.LastIndexOf(list);
 		System.out.println("\nData Contains: "); 
 		System.out.println(list.contains(list, new Student(21, "dharani", "ece")));

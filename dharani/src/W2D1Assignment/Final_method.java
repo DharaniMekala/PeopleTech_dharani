@@ -13,6 +13,6 @@ class session extends Final_Example
 	}
 }
 public static void main(String[] args) {
-	session a=new session();
+	//session a=new session();
 }
 }

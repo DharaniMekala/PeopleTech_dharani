@@ -50,6 +50,7 @@ public class EmployeeDetails
 	//Remove Last 
 	public void removeLast( EmployeeDetails list) 
 	{
+		Employee prev=null;
 		if (list.head == null)
 		{
 			System.out.println("list is already empty");
@@ -59,9 +60,11 @@ public class EmployeeDetails
 			Employee temp = list.head;
 			while(temp.next != null)
 			{
+				prev=temp;
 				temp = temp.next;
-				}
-			temp.next = null;
+			}		
+		prev.next = null;
+		
 			}
 		}
 	public void remove(EmployeeDetails list, int id,String name,double salary)

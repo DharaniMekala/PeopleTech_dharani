@@ -1,5 +1,7 @@
 package DataStructures;
- 
+
+import java.util.Objects;
+
 public class LinkedListImpl {
  
     Node head;
@@ -28,6 +30,7 @@ public class LinkedListImpl {
         while(curr!=null)
         {
             System.out.print(curr.data+" --> ");
+            
             curr=curr.next;
         }
     }
@@ -99,6 +102,27 @@ public class LinkedListImpl {
         }
         return list;
     }
+    public static void find(LinkedListImpl list,int data)
+    {
+    	if(list.head==null)
+    		System.out.println("List is Empty");
+    	else if(list.head.getData()==data)
+    		System.out.println("\n====="+list.head);
+    	else
+    	{
+    		Node curr=list.head;
+    		while(curr.next!=null)
+    		{
+    			if(curr.getData()==data)
+    			{
+    				System.out.println("\n====="+curr);
+    				break;
+    			}
+    			curr=curr.next;
+    		}
+    		
+    	}
+    }
 
     public static void main(String[] args) {
         LinkedListImpl list=new LinkedListImpl();
@@ -125,6 +149,8 @@ public class LinkedListImpl {
 
         list.addFirst(list, 45);
         printList(list);
+        list.find(list, 175);
+        printList(list);
 
     }
  
@@ -137,4 +163,25 @@ class Node
         this.data=data;
         next=null;
     }
+	public int getData() {
+		return data;
+	}
+	public void setData(int data) {
+		this.data = data;
+	}
+	public Node getNext() {
+		return next;
+	}
+	public void setNext(Node next) {
+		this.next = next;
+	}
+	@Override
+	public String toString() {
+		return "Node [data=" + data + ", next=" + next + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(data, next);
+	}
+	
 }
