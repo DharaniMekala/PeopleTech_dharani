@@ -140,10 +140,31 @@ public class DoubleLinkAuthor {
 		           }
 		   }
 		   //removeInMiddle
-		   public void removeInMiddle( DoubleLinkAuthor auth,int id,String name ,int Book)
-		   {
-			   
-		   }
+
+		   public void removeInMiddle(int indx, int j, String string, int k) {
+		
+		        Author temp=head;
+		        if(indx==1)
+		        {
+		            head.next.prev=null;
+		            head=head.next;
+		            temp.next=null;
+		            }
+		        else
+		        {
+		            int count=1;
+		            Author prev=head;
+		            while(count<indx-1)
+		            {
+		               prev=prev.next;
+		                count++;
+		            }
+		            Author current=prev.next;
+		            prev.next=current.next;
+		            current.prev=prev.next;
+
+		        }
+		    }
 		   //PrintList
 		public void printList(Author author)
 		{
@@ -188,13 +209,14 @@ public class DoubleLinkAuthor {
 			auth.printList(auth.head);	
 			System.out.println("\n ===removelast=== ");
 			auth.removeLast(auth,566,"dharani",100);
-			auth.printList(auth.head);	
+			auth.printList(auth.head); 
+			System.out.println("\n ===removeInMiddle=== ");
+			auth.removeInMiddle(3,96,"anu",584);
+			auth.printList(auth.head);
 }
 
 class Author
 {
-	 
-	
 	public Author head;
 	int id;
 	String name;
