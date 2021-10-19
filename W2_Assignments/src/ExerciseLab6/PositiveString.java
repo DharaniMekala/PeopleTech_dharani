@@ -4,23 +4,26 @@
  *   For Example: ANT is a positive String (Since T comes after N and N comes after A).
  *   The method should return true if the entered string is positive.*/
 package ExerciseLab6;
-import java.util.Scanner; 
-public class PositiveString { 
-public static void main(String[] args) { 
-Scanner scan = new Scanner(System.in); 
-System.out.println("Enter the String"); 
-String s = scan.next(); 
-s = s.toLowerCase(); 
-System.out.println(checkPositive(s)); 
-} 
-private static boolean checkPositive(String s) { 
-char ch[] = s.toCharArray();
-for (int i=0; i<ch.length-1; i++) { 
-if(ch[i] > ch[i+1]) { 
-System.out.println("Not a positive String "); 
-return false; 
-} 
-} 
-return true; 
-} 
+
+import java.util.Scanner;
+
+public class PositiveString {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String s = scan.next();
+		s = s.toLowerCase();
+		System.out.println(checkPositive(s));
+	}
+
+	private static boolean checkPositive(String s) {
+		char ch[] = s.toCharArray();
+		for (int i = 0; i < ch.length - 1; i++) {
+			if (ch[i] > ch[i + 1]) {
+				System.out.println("Not a positive String ");
+				return false;
+			}
+		}
+		return true;
+	}
 }

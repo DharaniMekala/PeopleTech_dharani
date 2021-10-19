@@ -1,593 +1,375 @@
 //Using an inheritance hierarchy, design a Java program to model items at a library (books, journal articles, videos and CDs.) Have an abstract superclass called Item and include....... 
 
+package ExerciseLab2;
 
+abstract class Item
 
-package ExerciseLab2; 
+{
 
-  
+	private String UID;
 
-abstract class Item 
+	private String title;
 
-  
+	private int noOfCopies;
 
-{ 
+	public String getUID() {
 
-	private String UID; 
+		return UID;
 
-	private String title; 
+	}
 
-	private int noOfCopies; 
+	public void setUID(String uID) {
 
-  
+		UID = uID;
 
-	 
+	}
 
-  
+	public String getTitle() {
 
-	public String getUID() { 
+		return title;
 
-		return UID; 
+	}
 
-	} 
+	public void setTitle(String title) {
 
-  
+		this.title = title;
 
-	public void setUID(String uID) { 
+	}
 
-		UID = uID; 
+	public int getNoOfCopies() {
 
-	} 
+		return noOfCopies;
 
-  
+	}
 
-	public String getTitle() { 
+	public void setNoOfCopies(int noOfCopies) {
 
-		return title; 
+		this.noOfCopies = noOfCopies;
 
-	} 
+	}
 
-  
+	public Item(String UID, String title, int noOfCopies) {
 
-	public void setTitle(String title) { 
+		super();
 
-		this.title = title; 
+		this.UID = UID;
 
-	} 
+		this.title = title;
 
-  
+		this.noOfCopies = noOfCopies;
 
-	public int getNoOfCopies() { 
+	}
 
-		return noOfCopies; 
+	@Override
 
-	} 
+	public String toString() {
 
-  
+		return "Item [UID=" + UID + ", title=" + title + ", noOfCopies=" + noOfCopies + "]";
 
-	public void setNoOfCopies(int noOfCopies) { 
+	}
 
-		this.noOfCopies = noOfCopies; 
+	abstract public int addItem();
 
-	} 
+	abstract public String checkIn();
 
-  
+	abstract public String checkOut();
 
-	public Item(String UID, String title, int noOfCopies) { 
+}
 
-  
+abstract class Writtenitem extends Item
 
-		super(); 
+{
 
-		this.UID = UID; 
+	private String author;
 
-		this.title = title; 
+	public String getAuthor() {
 
-		this.noOfCopies = noOfCopies; 
+		return author;
 
-  
+	}
 
-	} 
+	public void setAuthor(String author) {
 
-  
+		this.author = author;
 
-	@Override 
+	}
 
-  
+	public Writtenitem(String UID, String title, int noOfCopies) {
 
-	public String toString() { 
+		super(UID, title, noOfCopies);
 
-		return "Item [UID=" + UID + ", title=" + title + ", noOfCopies=" + noOfCopies + "]"; 
+		// TODO Auto-generated constructor stub
 
-	} 
+	}
 
-  
+}
 
-	abstract public int addItem(); 
+class Books extends Writtenitem
 
-	abstract public String checkIn(); 
+{
 
-	abstract public String checkOut(); 
+	public int addItem()
 
-  
+	{
 
-} 
+		return 15;
 
-  
+	}
 
-abstract class Writtenitem extends Item 
+	@Override
 
-  
+	public String checkIn()
 
-{ 
+	{
 
-	 
+		return "12sept";
 
-	private String author; 
+	}
 
-	 
+	@Override
 
-  
+	public String checkOut()
 
-	public String getAuthor() { 
+	{
 
-		return author; 
+		return "10sept";
 
-	} 
+	}
 
-  
+	public Books(String unique_ID, String title, int noOfCopies) {
 
-	public void setAuthor(String author) { 
+		super(unique_ID, title, noOfCopies);
 
-		this.author = author; 
+	}
 
-	} 
+	class JournalPaper extends Writtenitem
 
-  
+	{
 
-	public Writtenitem(String UID, String title, int noOfCopies) { 
+		private String yearpublished;
 
-		super(UID, title, noOfCopies); 
+		public String getYearpublished() {
 
-		// TODO Auto-generated constructor stub 
+			return yearpublished;
 
-	} 
+		}
 
-  
+		public void setYearpublished(String yearpublished) {
 
-} 
+			this.yearpublished = yearpublished;
 
-  
+		}
 
-class Books extends Writtenitem 
+		@Override
 
-  
+		public int addItem()
 
-{ 
+		{
 
-	public int addItem() 
+			return 5;
 
-	{ 
+		}
 
-		return 15; 
+		@Override
 
-	} 
+		public String checkIn()
 
-  
+		{
 
-	@Override 
+			return "5sept";
 
-  
+		}
 
-	public String checkIn() 
+		@Override
 
-	{ 
+		public String checkOut()
 
-		return "12sept"; 
+		{
 
-	} 
+			return "9sept";
 
-  
+		}
 
-	@Override 
+		public JournalPaper(String unique_ID, String title, int noOfCopies) {
 
-  
+			super(unique_ID, title, noOfCopies);
 
-	public String checkOut() 
+		}
 
-  
+	}
 
-	{ 
+	abstract class MediaItem extends Item
 
-		return "10sept"; 
+	{
 
-	} 
+		private int runTime;
 
-  
+		public int getRunTime() {
 
-	public Books(String unique_ID, String title, int noOfCopies) { 
+			return runTime;
 
-  
+		}
 
-		super(unique_ID, title, noOfCopies); 
+		public void setRunTime(int runTime) {
 
-  
+			this.runTime = runTime;
 
-	} 
+		}
 
-  
+		public MediaItem(String unique_ID, String title, int noOfCopies) {
 
-	class JournalPaper extends Writtenitem 
+			super(unique_ID, title, noOfCopies);
 
-  
+		}
 
-	{ 
+	}
 
-		private String yearpublished; 
+	class Video extends MediaItem
 
-  
+	{
 
-		public String getYearpublished() { 
+		private String director;
 
-			return yearpublished; 
+		private String genre;
 
-		} 
+		private String yearreleased;
 
-  
+		public Video(String unique_ID, String title, int noOfCopies, String director, String genre,
 
-		public void setYearpublished(String yearpublished) { 
+				String yearreleased) {
 
-			this.yearpublished = yearpublished; 
+			super(unique_ID, title, noOfCopies);
 
-		} 
+			this.director = director;
 
-  
+			this.genre = genre;
 
-		@Override 
+			this.yearreleased = yearreleased;
 
-  
+		}
 
-		public int addItem() 
+		public String getDirector() {
 
-  
+			return director;
 
-		{ 
+		}
 
-  
+		public String getGenre() {
 
-			return 5; 
+			return genre;
 
-  
+		}
 
-		} 
+		public String getYearreleased() {
 
-  
+			return yearreleased;
 
-		@Override 
+		}
 
-  
+		@Override
 
-		public String checkIn() 
+		public int addItem()
 
-  
+		{
 
-		{ 
+			return 1;
 
-  
+		}
 
-			return "5sept"; 
+		@Override
 
-  
+		public String checkIn()
 
-		} 
+		{
 
-  
+			return "2sept";
 
-		@Override 
+		}
 
-  
+		@Override
 
-		public String checkOut() 
+		public String checkOut()
 
-  
+		{
 
-		{ 
+			return "3sept";
 
-  
+		}
 
-			return "9sept"; 
+	}
 
-  
+	class CD extends MediaItem
 
-		} 
+	{
 
-  
+		public CD(String unique_ID, String title, int noOfCopies, String artist, String genere) {
 
-		public JournalPaper(String unique_ID, String title, int noOfCopies) { 
+			super(unique_ID, title, noOfCopies);
 
-  
+			this.artist = artist;
 
-			super(unique_ID, title, noOfCopies); 
+			this.genere = genere;
 
-  
+		}
 
-		} 
+		private String artist;
 
-  
+		private String genere;
 
-	} 
+		public String getArtist() {
 
-  
+			return artist;
 
-abstract class MediaItem extends Item 
+		}
 
-  
+		public String getGenere() {
 
-	{ 
+			return genere;
 
-  
+		}
 
-		private int runTime; 
+		@Override
 
-  
+		public int addItem()
 
-		public int getRunTime() { 
+		{
 
-			return runTime; 
+			return 13;
 
-		} 
+		}
 
-  
+		@Override
 
-		public void setRunTime(int runTime) { 
+		public String checkIn()
 
-			this.runTime = runTime; 
+		{
 
-		} 
+			return "24sept";
 
-  
+		}
 
-		 
+		@Override
 
-		public MediaItem(String unique_ID, String title, int noOfCopies) { 
+		public String checkOut()
 
-  
+		{
 
-			super(unique_ID, title, noOfCopies); 
+			return "30sept";
 
-  
+		}
 
-		} 
+	}
 
-  
+}
 
-	} 
+public class InheritPoly
 
-  
+{
 
-	class Video extends MediaItem 
+	public static void main(String[] args)
 
-  
+	{
 
-	{ 
+	}
 
-		private String director; 
-
-		private String genre; 
-
-		private String yearreleased; 
-
-  
-
-		 
-
-		 
-
-		public Video(String unique_ID, String title, int noOfCopies, String director, String genre, 
-
-				String yearreleased) { 
-
-			super(unique_ID, title, noOfCopies); 
-
-			this.director = director; 
-
-			this.genre = genre; 
-
-			this.yearreleased = yearreleased; 
-
-		} 
-
-  
-
-		public String getDirector() { 
-
-			return director; 
-
-		} 
-
-  
-
-		public String getGenre() { 
-
-			return genre; 
-
-		} 
-
-  
-
-		public String getYearreleased() { 
-
-			return yearreleased; 
-
-		} 
-
-  
-
-		@Override 
-
-		public int addItem() 
-
-  
-
-		{ 
-
-			return 1; 
-
-		} 
-
-  
-
-		@Override 
-
-		public String checkIn() 
-
-  
-
-		{ 
-
-			return "2sept"; 
-
-		} 
-
-  
-
-		@Override 
-
-		public String checkOut() 
-
-  
-
-		{ 
-
-			return "3sept"; 
-
-		} 
-
-  
-
-		 
-
-  
-
-	} 
-
-  
-
-	class CD extends MediaItem 
-
-  
-
-	{ 
-
-  
-
-		 
-
-		public CD(String unique_ID, String title, int noOfCopies, String artist, String genere) { 
-
-			super(unique_ID, title, noOfCopies); 
-
-			this.artist = artist; 
-
-			this.genere = genere; 
-
-		} 
-
-  
-
-		private String artist; 
-
-		private String genere; 
-
-		 
-
-		 
-
-  
-
-		public String getArtist() { 
-
-			return artist; 
-
-		} 
-
-  
-
-		public String getGenere() { 
-
-			return genere; 
-
-		} 
-
-  
-
-		@Override 
-
-		public int addItem() 
-
-		{ 
-
-			return 13; 
-
-		} 
-
-  
-
-		@Override 
-
-		public String checkIn() 
-
-  
-
-		{ 
-
-			return "24sept"; 
-
-		} 
-
-  
-
-		@Override 
-
-		public String checkOut() 
-
-  
-
-		{ 
-
-			return "30sept"; 
-
-		} 
-
-  
-
-		 
-
-	} 
-
-  
-
-} 
-
-  
-
-public class InheritPoly 
-
-  
-
-{ 
-
-  
-
-	public static void main(String[] args) 
-
-  
-
-	{ 
-
-  
-
-	} 
-
-  
-
-} 
+}
