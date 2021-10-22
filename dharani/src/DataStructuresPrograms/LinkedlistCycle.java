@@ -25,7 +25,7 @@ public class LinkedlistCycle {
 
 		ll.print();
 
-		ll.head.next.next.next.next.next = ll.head.next;
+		ll.head.next.next.next.next = ll.head.next;
 
 		ll.hasCycle();
 	}
