@@ -1,3 +1,4 @@
+//9.Find the first non-repeating element in a given array of integers.
 package Array2Oct;
 
 public class Nonrepeating {

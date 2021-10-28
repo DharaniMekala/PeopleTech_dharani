@@ -6,20 +6,36 @@ import java.util.Scanner;
 public class CountPairsWIthGivenSum{
 	  public static void main(String[] args) {
 	  Scanner scan = new Scanner(System.in);
-	  System.out.println("enter size of array"); int n = scan.nextInt();
+	  System.out.println("enter size of array"); 
+	  int n = scan.nextInt();
 	  System.out.println("enter the int"); 
 	  int k = scan.nextInt();
 	  
 	  int a[] = new int[n];
 	  
-	  for(int i=0;i<n;i++) { a[i] = scan.nextInt(); }
+	  for(int i=0;i<n;i++)
+	  {
+		  a[i] = scan.nextInt(); 
+		  }
 	  
-	  int numOfPairs = getPairsCount(a,n,k); System.out.println(numOfPairs); }
+	  int numOfPairs = getPairsCount(a,n,k); 
+	  System.out.println(numOfPairs);
+	  }
 	  
-	  static int getPairsCount(int[] a, int n, int k) {
+	  static int getPairsCount(int[] a, int n, int k) 
+	  {
 	  
-	  int count = 0; for(int i=0;i<n-1;i++){ for(int j=i+1;j<n;j++){ if(a[i]+a[j]
-	  == k){ System.out.println(a[i]+" "+a[j]); count++; } } } return count; }
+	  int count = 0; for(int i=0;i<n-1;i++)
+	  { 
+		  for(int j=i+1;j<n;j++){ if(a[i]+a[j] == k)
+		  {
+			  System.out.println(a[i]+" "+a[j]);
+		  count++;
+		  }
+		  }
+		  } 
+	  return count; 
+	  }
 	  
 	  }
 	 
