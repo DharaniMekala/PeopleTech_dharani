@@ -55,8 +55,6 @@ public class IncreaseByOne {
 			head.data = head.data + 1;
 		} else {
 			Node2 temp = head;
-//                temp.data  = 0;
-//                temp.next.data = temp.next.data  +1;
 			while (temp.data >= 9) {
 				temp.data = 0;
 				temp.next.data = temp.next.data + 1;
@@ -76,7 +74,7 @@ public class IncreaseByOne {
 		/*
 		 * head= Reverse(head); System.out.println("===\nReverse===="); printList(i1);
 		 */
-		System.out.println("\n increase");
+		System.out.println("\n After increasing ");
 		i1.incbyOne();
 		Reverse();
 		printList(i1);

@@ -78,8 +78,8 @@ public class CLLDemo {
 		Node n4 = new Node(98);
 		csll.insert(n4);
 		csll.print(csll.head);
-		System.out.print("Delete method :");
-		csll.delete(18);
-		csll.print(csll.head);
+		//System.out.print("Delete method :");
+		//csll.delete(18);
+		//csll.print(csll.head);
 	}
 }
