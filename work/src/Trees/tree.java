@@ -41,7 +41,6 @@ public class tree {
 			return;
 		}
 		System.out.print(root.data + " -->");
-
 		preOrder(root.left);
 		preOrder(root.right);
 

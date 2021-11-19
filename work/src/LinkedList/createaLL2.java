@@ -47,8 +47,6 @@ public class createaLL2 {
 		return head;
 	}
 
-	private createaLL2 next;
-
 	public int middle(Node3 head) {
 		Node3 slow = head;
 		Node3 fast = head;
@@ -178,10 +176,10 @@ public class createaLL2 {
 		createaLL2 l1 = new createaLL2();
 
 		l1.adding(10);
-		l1.adding(1256);
-		l1.adding(1300);
 		l1.adding(12);
-		l1.adding(1550);
+		l1.adding(25);
+		l1.adding(18);
+		l1.adding(50);
 		printList(l1);
 		head = l1.reverse(head);
 		System.out.println("\nreverse");
