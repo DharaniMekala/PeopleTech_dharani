@@ -7,7 +7,7 @@ public class CommonIn3Arrays {
 		CommonIn3Arrays ob = new CommonIn3Arrays();
 	 
         int arr1[] = {1, 5, 10, 15, 30, 80};
-        int arr2[] = { 2,6, 8, 15,30,500};
+        int arr2[] = {2,6, 8, 15,30,500};
         int arr3[] = {3, 4, 15, 20, 30, 50, 80, 120};
  
         System.out.print("Common elements are ");

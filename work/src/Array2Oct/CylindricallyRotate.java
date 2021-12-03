@@ -15,10 +15,8 @@ public class CylindricallyRotate {
 //		
 //		for(int i=0;i<n;i++) {
 //			System.out.println(a[i]);
-//		}
-//		
-//		
-	static void rotate(int arr[]) {
+//		} 	
+	public static void rotate(int arr[]) {
 
 
         int j=arr.length-1;

@@ -12,9 +12,7 @@ public class CirculartoDLL {
 			prev = null;
 		}
 	}
-
 	Node head;
-
 	// add - to doubly linked list
 	void addFirst(int data) {
 		Node newNode = new Node(data);
@@ -28,7 +26,6 @@ public class CirculartoDLL {
 		head = newNode;
 
 	}
-
 	// add last to ll
 	void add(int data) {
 		Node newNode = new Node(data);
